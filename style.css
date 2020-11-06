@@ -1,0 +1,186 @@
+body {
+  position: relative;
+}
+
+.container {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  background-color: black;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.customization-panel {
+  display: flex;
+  background-color: #a8c9ae;
+  padding: 10px;
+  width: 530px;
+  flex-wrap: wrap;
+}
+
+.menu {
+  width: 530px;
+  display: flex;
+  margin-bottom: 10px;
+}
+
+.menu-item {
+  font-family: "Nunito", sans-serif;
+  font-size: 24px;
+  background-color: gray;
+  color: white;
+  text-shadow: -2px 0 black, 0 2px black, 2px 0 black, 0 -2px black;
+  margin-right: 10px;
+  padding: 8px 10px;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.visualization-panel {
+  width: 180px;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  padding: 40px;
+  margin-right: 10px;
+  border-radius: 5px;
+  position: relative;
+}
+
+.right-sidebar {
+  padding: 40px;
+  width: 180px;
+  border-radius: 5px;
+  height: 260px;
+}
+
+.gray {
+  background-color: #7b9280;
+}
+
+.color-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 4px solid black;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+}
+
+.hat-button {
+  height: 40px;
+  width: 40px;
+  border-radius: 10px;
+  border: 4px solid black;
+  margin: 5px;
+  cursor: pointer;
+  position: relative;
+  background-size: contain;
+  background-repeat: no-repeat;
+}
+
+.red {
+  background-color: #c71310;
+}
+
+.blue {
+  background-color: #132ed3;
+}
+
+.green {
+  background-color: #1e802c;
+}
+
+.pink {
+  background-color: #ef54bc;
+}
+
+.orange {
+  background-color: #f17d0d;
+}
+
+.yellow {
+  background-color: #f6f658;
+}
+
+.black {
+  background-color: #3e474f;
+}
+
+.white {
+  background-color: #d8e1f2;
+}
+
+.purple {
+  background-color: #6a2fba;
+}
+
+.brown {
+  background-color: #70491e;
+}
+
+.cyan {
+  background-color: #46ffde;
+}
+
+.lime {
+  background-color: #50f038;
+}
+
+.selected::before {
+  background-color: black;
+  opacity: 0.4;
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  right: 0;
+  left: 0;
+  border-radius: 100%;
+}
+
+.selected::after {
+  content: "X";
+  position: absolute;
+  top: 9px;
+  left: 12px;
+  font-family: 'Nunito', sans-serif;
+  font-size: 24px;
+  opacity: 0.6;
+}
+
+.tab {
+  display: none;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+
+.tab.active {
+  display: flex;
+}
+
+#hat {
+  bottom: 180px;
+  position: absolute;
+}
+
+.flamingo {
+  background-image: url("./images/hats/0000.png");
+}
+
+.flamingo {
+  background-image: url("./images/hats/0051.png");
+}
+
+.witch {
+  background-image: url("./images/hats/0057.png");
+}
+
+.knight {
+  background-image: url("./images/hats/0043.png");
+}

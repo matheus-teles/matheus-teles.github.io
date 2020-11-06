@@ -1,8 +1,86 @@
 <html>
   <head>
     <link rel="stylesheet" href="reset.css">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700&display=swap" rel="stylesheet">
   </head>
   <body>
-    Hello World.
+    <div class="container black">
+      <div class="customization-panel">
+        <div class="menu">
+          <div data-id="1" class="menu-item gray">COLOR</div>
+          <div data-id="2" class="menu-item gray">HAT</div>
+        </div>
+        <div class="visualization-panel gray">
+          <img id="hat" src="" >
+          <img id="character" src="images/red.png" />
+        </div>
+
+        <div class="right-sidebar gray">
+          <div id="tab-1" class="tab active">
+            <div data-id="red" class="color-button red selected"></div>
+            <div data-id="blue" class="color-button blue"></div>
+            <div data-id="green" class="color-button green"></div>
+            <div data-id="pink" class="color-button pink"></div>
+            <div data-id="orange" class="color-button orange"></div>
+            <div data-id="yellow" class="color-button yellow"></div>
+            <div data-id="black" class="color-button black"></div>
+            <div data-id="white" class="color-button white"></div>
+            <div data-id="purple" class="color-button purple"></div>
+            <div data-id="brown" class="color-button brown"></div>
+            <div data-id="cyan" class="color-button cyan"></div>
+            <div data-id="lime" class="color-button lime"></div>
+          </div>
+          <div id="tab-2" class="tab">
+            <div data-id="0000" class="hat-button none selected"></div>
+            <div data-id="0051" class="hat-button flamingo"></div>
+            <div data-id="0057" class="hat-button witch"></div>
+            <div data-id="0043" class="hat-button knight"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script>
+      var elements = document.getElementsByClassName("color-button")
+      for(var i = 0; i < elements.length; i++) {
+        elements[i].addEventListener("click", function(event) {
+          button = event.target
+          button.classList.add("selected")
+          for(var j = 0; j < elements.length; j++) {
+            elements[j].classList.remove("selected")
+          }
+          button.classList.add("selected")
+          image = button.getAttribute("data-id")
+          document.getElementById("character").setAttribute("src", `images/${image}.png`)
+        })
+      }
+
+      var hatButtons = document.getElementsByClassName("hat-button")
+      for(var i = 0; i < hatButtons.length; i++) {
+        hatButtons[i].addEventListener("click", function(event) {
+          button = event.target
+          button.classList.add("selected")
+          for(var j = 0; j < hatButtons.length; j++) {
+            hatButtons[j].classList.remove("selected")
+          }
+          button.classList.add("selected")
+          image = button.getAttribute("data-id")
+          document.getElementById("hat").setAttribute("src", `images/hats/${image}.png`)
+        })
+      }
+
+      var menuItems = document.getElementsByClassName("menu-item")
+      var tabs = document.getElementsByClassName("tab")
+      for(var i = 0; i < menuItems.length; i++) {
+        menuItems[i].addEventListener("click", function(event) {
+          target = event.target.getAttribute("data-id")
+          for(var j = 0; j < tabs.length; j++) {
+            tabs[j].classList.remove("active")
+          }
+          document.getElementById(`tab-${target}`).classList.add("active")
+        })
+      }
+
+    </script>
   </body>
 </html>
